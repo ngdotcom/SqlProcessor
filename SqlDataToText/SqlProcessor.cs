@@ -37,23 +37,29 @@ namespace SqlDataToText
 
                 try
                 {
-                    while (reader.Read())
+                    while (reader.HasRows)
                     {
-                        if (writer == null || recordCount == 50000)
-                        {
-                            if (writer != null)
-                            {
-                                writer.Close();
-                                writer.Dispose();
-                            }
-                            fileName = tableName + "_" + (++fileCount).ToString() + ".csv";
+                        writer = new StreamWriter(fileName);
+                        writer.WriteLine("\t{0}\t{1}", reader.GetName(0), reader.GetName(1));
 
-                            writer = new StreamWriter(fileName);
+                        while (reader.Read())
+                        {
+                            if (writer == null || recordCount == 50000)
+                            {
+                                if (writer != null)
+                                {
+                                    writer.Close();
+                                    writer.Dispose();
+                                }
+                                fileName = tableName + "_" + (++fileCount).ToString() + ".csv";
+
+                                writer = new StreamWriter(fileName);
+                            }
+                            recordCount++;
+                            writer.WriteLine("\t{0}\t{1}", reader.GetDecimal(0), reader.GetString(1));
                         }
-                        recordCount++;
-                        writer.WriteLine("\t{0}\t{1}", reader.GetDecimal(0), reader.GetString(1));
+                        reader.NextResult();
                     }
-                    reader.NextResult();
                 }
                 finally
                 {
