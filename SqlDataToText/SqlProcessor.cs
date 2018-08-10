@@ -34,13 +34,15 @@ namespace SqlDataToText
                 reader = scCmd.ExecuteReader();
 
                 StreamWriter writer = null;
+                
 
                 try
                 {
                     while (reader.HasRows)
                     {
                         writer = new StreamWriter(fileName);
-                        writer.WriteLine("\t{0}\t{1}", reader.GetName(0), reader.GetName(1));
+                        
+                        writer.WriteLine("\t{0},\t{1}", reader.GetName(0), reader.GetName(1));
 
                         while (reader.Read())
                         {
@@ -56,7 +58,7 @@ namespace SqlDataToText
                                 writer = new StreamWriter(fileName);
                             }
                             recordCount++;
-                            writer.WriteLine("\t{0}\t{1}", reader.GetDecimal(0), reader.GetString(1));
+                            writer.WriteLine("\t{0},\t{1}", reader.GetDecimal(0), reader.GetString(1));
                         }
                         reader.NextResult();
                     }
