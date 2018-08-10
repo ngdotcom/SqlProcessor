@@ -13,5 +13,9 @@ namespace SqlDataToText
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
+        public static string FullFilePath(this string fileName)
+        {
+            return $@"{ ConfigurationManager.AppSettings["filePath"] }\{fileName}";
+        }
     }
 }
