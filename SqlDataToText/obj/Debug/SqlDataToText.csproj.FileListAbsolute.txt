@@ -1,0 +1,7 @@
+c:\users\ngdotcom\source\repos\SqlDataToText\SqlDataToText\bin\Debug\SqlDataToText.exe.config
+c:\users\ngdotcom\source\repos\SqlDataToText\SqlDataToText\bin\Debug\SqlDataToText.exe
+c:\users\ngdotcom\source\repos\SqlDataToText\SqlDataToText\bin\Debug\SqlDataToText.pdb
+c:\users\ngdotcom\source\repos\SqlDataToText\SqlDataToText\obj\Debug\SqlDataToText.csprojResolveAssemblyReference.cache
+c:\users\ngdotcom\source\repos\SqlDataToText\SqlDataToText\obj\Debug\SqlDataToText.csproj.CoreCompileInputs.cache
+c:\users\ngdotcom\source\repos\SqlDataToText\SqlDataToText\obj\Debug\SqlDataToText.exe
+c:\users\ngdotcom\source\repos\SqlDataToText\SqlDataToText\obj\Debug\SqlDataToText.pdb
